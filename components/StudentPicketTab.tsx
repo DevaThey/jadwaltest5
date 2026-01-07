@@ -1,6 +1,6 @@
 import React from 'react';
 import { studentPicketData } from '../data';
-import { Users, Crown } from 'lucide-react';
+import { Sparkles, Crown } from 'lucide-react';
 import { getIndonesianDay } from '../utils/timeUtils';
 
 export const StudentPicketTab: React.FC = () => {
@@ -9,7 +9,7 @@ export const StudentPicketTab: React.FC = () => {
   return (
     <div className="pb-20">
       <h2 className="text-2xl font-heading font-bold text-white mb-6 flex items-center gap-3">
-        <Users className="text-accent" size={28} />
+        <Sparkles className="text-accent" size={28} />
         Piket Kelas
       </h2>
 
@@ -57,7 +57,7 @@ export const StudentPicketTab: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2 mb-3">
-                  <Users className="text-primary" size={20} />
+                  <Sparkles className="text-primary" size={20} />
                   <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">
                     Anggota
                   </span>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { substituteData } from '../data';
-import { UserCog, AlertCircle } from 'lucide-react';
+import { Timer, AlertCircle, Check } from 'lucide-react';
 
 export const SubstituteTab: React.FC = () => {
   if (substituteData.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-slate-600">
-        <UserCog size={64} className="mb-4 opacity-20" />
+        <Timer size={64} className="mb-4 opacity-20" />
         <p className="font-heading">Tidak ada data guru pengganti.</p>
       </div>
     );
@@ -15,7 +15,7 @@ export const SubstituteTab: React.FC = () => {
   return (
     <div className="pb-20">
       <h2 className="text-2xl font-heading font-bold text-white mb-6 flex items-center gap-3">
-        <UserCog className="text-accent" size={28} />
+        <Timer className="text-accent" size={28} />
         Team Teaching
       </h2>
 
@@ -23,7 +23,7 @@ export const SubstituteTab: React.FC = () => {
         {substituteData.map((sub, index) => (
           <div key={index} className="bg-white/5 border-l-4 border-primary rounded-r-xl p-5 flex flex-col md:flex-row md:items-center gap-4 hover:bg-white/10 transition-all">
             <div className="bg-primary/20 p-3 rounded-full text-primary w-fit">
-              <UserCog size={24} />
+              <Check size={24} />
             </div>
 
             <div className="flex-1">

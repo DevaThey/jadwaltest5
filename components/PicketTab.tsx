@@ -1,7 +1,7 @@
 import React from 'react';
 import { picketPagiData, picketSoreData } from '../data';
 import { Picket } from '../types';
-import { MessageCircle, Sun, Moon, Coffee } from 'lucide-react';
+import { MessageCircle, Sun, Moon, Zap } from 'lucide-react';
 
 const PicketSection = ({ data, title, icon, accentColor }: { 
   data: Picket[], 
@@ -44,7 +44,7 @@ export const PicketTab: React.FC = () => {
   return (
     <div className="pb-20">
       <h2 className="text-2xl font-heading font-bold text-white mb-6 flex items-center gap-3">
-        <Coffee className="text-accent" size={28} />
+        <Zap className="text-accent" size={28} />
         Daftar Guru Piket
       </h2>
 

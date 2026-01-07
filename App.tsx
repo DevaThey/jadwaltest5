@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Users, UserCog, Coffee, Sparkles, LayoutGrid, UsersRound, Menu } from 'lucide-react';
+import { Calendar, Users, Zap, Timer, Sparkles, LayoutGrid, UsersRound, Menu } from 'lucide-react';
 import { HeroSection } from './components/HeroSection';
 import { InfoCard } from './components/InfoCard';
 import { ScheduleTab } from './components/ScheduleTab';
@@ -19,10 +19,10 @@ function App() {
   // Menu Configuration
   const tabs = [
     { id: 'jadwal', label: 'Jadwal', icon: <Calendar size={20} /> },
-    { id: 'piketKelas', label: 'Piket Kelas', icon: <UsersRound size={20} /> },
+    { id: 'piketKelas', label: 'Piket Kelas', icon: <Sparkles size={20} /> },
     { id: 'guru', label: 'Guru', icon: <Users size={20} /> },
-    { id: 'pengganti', label: 'Team Teaching', icon: <UserCog size={20} /> },
-    { id: 'piket', label: 'Guru Piket', icon: <Coffee size={20} /> },
+    { id: 'pengganti', label: 'Team Teaching', icon: <Timer size={20} /> },
+    { id: 'piket', label: 'Guru Piket', icon: <Zap size={20} /> },
   ];
 
   return (
@@ -86,7 +86,7 @@ function App() {
         </div>
 
         {/* Floating Dock Navigation (Bottom for Mobile, Sticky for Desktop) */}
-        <div className="fixed bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
+        <div className="fixed bottom-20 md:bottom-12 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
           <div className="bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 flex justify-between items-center shadow-2xl shadow-black/50">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
@@ -108,7 +108,7 @@ function App() {
                     {tab.icon}
                   </div>
 
-                  {isActive && (
+                  {false && (
                     <span className="absolute -bottom-1 text-[10px] font-bold tracking-wide animate-fade-in">
                       {tab.label}
                     </span>

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { scheduleData } from '../data';
-import { Clock, User, Calendar, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { Clock, User, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 import { getIndonesianDay } from '../utils/timeUtils';
 
 interface ScheduleTabProps {
   onNavigateToTeacher?: () => void;
 }
 
-export const ScheduleTab: React.FC<ScheduleTabProps> = ({ onNavigateToTeacher }) => {
+export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
   const days = Object.keys(scheduleData);
   const currentDay = getIndonesianDay();
   const [openDay, setOpenDay] = useState<string>(currentDay);
@@ -74,8 +74,10 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = ({ onNavigateToTeacher })
 
                   return (
                     <div key={idx} className="p-4 hover:bg-white/5 transition-colors flex gap-4 group">
-                      <div className="flex flex-col items-center pt-1 min-w-[3.5rem]">
-                        <span className="text-base font-heading font-bold text-slate-400 group-hover:text-white transition-colors">{row.time.split(' - ')[0]}</span>
+                      <div className="flex flex-col items-center pt-1 min-w-[4rem]">
+                        <span className="text-xs font-bold text-accent bg-accent/10 px-2 py-1 rounded-full border border-accent/20">
+                          {idx + 1}
+                        </span>
                         <div className="h-full w-px bg-white/5 my-2 group-hover:bg-primary/30 transition-colors"></div>
                       </div>
 
@@ -84,11 +86,6 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = ({ onNavigateToTeacher })
                           <span className="text-xs font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">
                              {row.time}
                           </span>
-                          {row.code1 !== '-' && row.code1 !== 'Kosong' && (
-                             <span className="text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded border border-accent/20">
-                               {row.code1}
-                             </span>
-                          )}
                         </div>
 
                         <h4 className="text-lg font-heading font-semibold text-slate-200 group-hover:text-primary transition-colors mb-1">
@@ -96,20 +93,9 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = ({ onNavigateToTeacher })
                         </h4>
 
                         {row.teacher !== '-' && (
-                          <div className="flex items-center justify-between gap-2">
-                            <div className="flex items-center gap-2 text-sm text-slate-300">
-                              <User size={14} className="text-slate-500" />
-                              <span className="truncate font-medium">{row.teacher}</span>
-                            </div>
-                            {onNavigateToTeacher && (
-                              <button
-                                onClick={onNavigateToTeacher}
-                                className="p-1.5 rounded-lg bg-accent/10 hover:bg-accent/20 text-accent transition-all shrink-0"
-                                title="Lihat detail guru"
-                              >
-                                <ArrowRight size={14} />
-                              </button>
-                            )}
+                          <div className="flex items-center gap-2">
+                            <User size={14} className="text-slate-500 shrink-0" />
+                            <span className="font-medium text-sm text-slate-300 break-words">{row.teacher}</span>
                           </div>
                         )}
                       </div>
