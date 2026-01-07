@@ -47,7 +47,7 @@ function App() {
              >
                <Menu size={18} />
              </button>
-             <div className="text-white font-heading font-bold tracking-wider text-xl">KAVITWO CONNECT</div>
+             <div className="text-white font-heading font-semibold tracking-wide text-sm">XI DKV 2</div>
            </div>
            <button
              onClick={() => setIsLogOpen(true)}

@@ -13,9 +13,9 @@ export const HeroSection: React.FC = () => {
   return (
     <div className="relative mb-8 pt-4">
       <div className="flex flex-col items-center justify-center text-center">
-        <div className="mb-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-medium text-accent">
-          <Sparkles size={12} />
-          <span>XI DKV 2 CONNECT</span>
+        <div className="mb-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-base font-semibold text-accent">
+          <Sparkles size={16} />
+          <span>Kavitwo Connect</span>
         </div>
         
         <h1 className="text-5xl md:text-7xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 tracking-tight drop-shadow-sm">
